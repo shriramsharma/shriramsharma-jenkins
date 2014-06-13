@@ -9,11 +9,14 @@ RUN apt-get install -q -y vim
 RUN apt-get install -q -y openssh-server
 RUN apt-get install -q -y ant
 RUN apt-get install -q -y cvs
+RUN apt-get install -q -y maven
+RUN apt-get install -q -y git
 RUN mkdir /var/run/sshd
 RUN echo 'root:docker' | chpasswd
 RUN apt-get install -q -y wget
 ADD http://mirrors.jenkins-ci.org/war/latest/jenkins.war /root/jenkins.war
-RUN export JENKINS_HOME=/root
+RUN echo "export JENKINS_HOME=/root" >> /etc/bash.bashrc
+RUN mkdir /opt/jenkins
 
 EXPOSE 8080
 EXPOSE 22
