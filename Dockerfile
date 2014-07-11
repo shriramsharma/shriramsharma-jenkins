@@ -1,6 +1,8 @@
 FROM shriramsharma/basedocker
 MAINTAINER Shriram Sharma "shriram.sharma22@gmail.com"
 
+#07102014
+
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get update
 RUN apt-get dist-upgrade -y
@@ -23,4 +25,7 @@ RUN mkdir /opt/jenkins
 RUN echo "export JENKINS_HOME=/opt/jenkins" >> /etc/bash.bashrc
 RUN mv jenkins.war /opt/jenkins/
 
+ADD run.sh /
+
 EXPOSE 8080
+CMD ["/run"]
