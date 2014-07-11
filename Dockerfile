@@ -1,7 +1,7 @@
 FROM shriramsharma/basedocker
 MAINTAINER Shriram Sharma "shriram.sharma22@gmail.com"
 
-#07102014
+#07102014 00:45
 
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 RUN apt-get update
@@ -28,4 +28,4 @@ RUN mv jenkins.war /opt/jenkins/
 ADD run.sh /
 
 EXPOSE 8080
-CMD ["/run"]
+CMD ["sh","/run.sh"]

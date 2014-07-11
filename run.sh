@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
-/usr/sbin/sshd -D
-java -jar /opt/jenkins/jenkins.war &
+/usr/sbin/sshd
+java -jar /opt/jenkins/jenkins.war
